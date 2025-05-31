@@ -87,7 +87,7 @@
     (async () => {
       const SQL = await initSqlJs({ locateFile: file => `https://cdn.jsdelivr.net/npm/sql.js@1.8.0/dist/${file}` });
 
-      const response = await fetch("2024.db.gz");
+      const response = await fetch("https://evilgeek.github.io/CollegePred/2024.db.gz");
       const compressed = new Uint8Array(await response.arrayBuffer());
       const decompressed = new Uint8Array(pako.ungzip(compressed));
       const db = new SQL.Database(decompressed);
