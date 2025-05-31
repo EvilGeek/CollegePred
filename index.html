@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,77 +13,100 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 p-6">
+<body class="bg-gray-50 p-4 sm:p-6">
 
   <!-- Header -->
-  <header class="mb-10 text-center">
-    <h1 class="text-4xl font-bold text-gray-800">College Predictor</h1>
-    <p class="text-sm text-gray-500 mt-1">Everything calculated here is based upon official cut-off data of the year 2024.</p>
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">College Predictor</h1>
+    <p class="text-xs sm:text-sm text-gray-500 mt-1 max-w-md mx-auto px-2">
+      Everything calculated here is based upon official cut-off data of the year 2024.
+    </p>
   </header>
 
   <!-- Filter Form Section -->
-  <section id="filterSection" class="max-w-4xl mx-auto mb-10 p-6 bg-white shadow rounded hidden">
+  <section id="filterSection" class="max-w-4xl mx-auto mb-8 p-4 sm:p-6 bg-white shadow rounded hidden">
     <form id="filterForm" class="space-y-6">
-      <div>
-        <label for="counseling" class="block font-semibold mb-1 text-gray-700">Counseling <span class="text-red-500">*</span></label>
-        <select id="counseling" name="counseling" required class="w-full px-3 py-2 border rounded"></select>
-      </div>
 
       <div>
-        <label for="rank" class="block font-semibold mb-1 text-gray-700">Rank <span class="text-red-500">*</span></label>
-        <input type="number" id="rank" name="rank" required class="w-full px-3 py-2 border rounded" />
+        <label for="counseling" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Counseling <span class="text-red-500">*</span></label>
+        <select id="counseling" name="counseling" required class="w-full px-3 py-2 border rounded text-sm sm:text-base"></select>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div>
+        <label for="rank" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Rank <span class="text-red-500">*</span></label>
+        <input
+          type="number"
+          id="rank"
+          name="rank"
+          required
+          placeholder="Enter your rank"
+          class="w-full px-3 py-2 border rounded text-sm sm:text-base"
+          min="1"
+          inputmode="numeric"
+          pattern="[0-9]*"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
         <div>
-          <label for="institute" class="block font-semibold mb-1">Institute</label>
-          <select id="institute" name="institute" class="w-full px-3 py-2 border rounded">
+          <label for="institute" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Institute</label>
+          <select id="institute" name="institute" class="w-full px-3 py-2 border rounded text-sm sm:text-base">
             <option value="">All</option>
           </select>
         </div>
 
         <div>
-          <label for="program" class="block font-semibold mb-1">Program</label>
-          <select id="program" name="program" class="w-full px-3 py-2 border rounded">
+          <label for="program" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Program</label>
+          <select id="program" name="program" class="w-full px-3 py-2 border rounded text-sm sm:text-base">
             <option value="">All</option>
           </select>
         </div>
 
         <div>
-          <label for="quota" class="block font-semibold mb-1">Quota</label>
-          <select id="quota" name="quota" class="w-full px-3 py-2 border rounded">
+          <label for="quota" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Quota</label>
+          <select id="quota" name="quota" class="w-full px-3 py-2 border rounded text-sm sm:text-base">
             <option value="">All</option>
           </select>
         </div>
 
         <div>
-          <label for="category" class="block font-semibold mb-1">Category</label>
-          <select id="category" name="category" class="w-full px-3 py-2 border rounded">
+          <label for="category" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Category</label>
+          <select id="category" name="category" class="w-full px-3 py-2 border rounded text-sm sm:text-base">
             <option value="">All</option>
           </select>
         </div>
 
         <div>
-          <label for="round" class="block font-semibold mb-1">Round</label>
-          <select id="round" name="round" class="w-full px-3 py-2 border rounded">
+          <label for="round" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Round</label>
+          <select id="round" name="round" class="w-full px-3 py-2 border rounded text-sm sm:text-base">
             <option value="">All</option>
           </select>
         </div>
 
         <div>
-          <label for="seatGender" class="block font-semibold mb-1">Seat Gender</label>
-          <select id="seatGender" name="seatGender" class="w-full px-3 py-2 border rounded">
+          <label for="seatGender" class="block font-semibold mb-1 text-gray-700 text-sm sm:text-base">Seat Gender</label>
+          <select id="seatGender" name="seatGender" class="w-full px-3 py-2 border rounded text-sm sm:text-base">
             <option value="">All</option>
           </select>
         </div>
       </div>
 
-      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Predict</button>
+      <button
+        type="submit"
+        class="w-full sm:w-auto bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 text-base sm:text-lg font-semibold transition"
+      >
+        Predict
+      </button>
     </form>
   </section>
 
   <!-- Results Section -->
-  <section id="resultsSection" class="max-w-7xl mx-auto hidden p-6 bg-white shadow rounded overflow-x-auto">
+  <section
+    id="resultsSection"
+    class="max-w-7xl mx-auto hidden p-4 sm:p-6 bg-white shadow rounded overflow-x-auto"
+    aria-live="polite"
+  >
     <div id="results"></div>
   </section>
 
@@ -91,7 +114,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
   <script>
     (async () => {
-      const SQL = await initSqlJs({ locateFile: file => `https://cdn.jsdelivr.net/npm/sql.js@1.8.0/dist/${file}` });
+      const SQL = await initSqlJs({
+        locateFile: (file) => `https://cdn.jsdelivr.net/npm/sql.js@1.8.0/dist/${file}`,
+      });
 
       // Load and decompress DB
       const response = await fetch("2024.db.gz");
@@ -100,11 +125,15 @@
       const db = new SQL.Database(decompressed);
 
       // Get all table names (counselings)
-      const tablesResult = db.exec(`SELECT name FROM sqlite_master WHERE type='table'`);
-      const tableNames = tablesResult.length ? tablesResult[0].values.map(row => row[0]) : [];
+      const tablesResult = db.exec(
+        `SELECT name FROM sqlite_master WHERE type='table'`
+      );
+      const tableNames = tablesResult.length
+        ? tablesResult[0].values.map((row) => row[0])
+        : [];
 
       const counselingSelect = document.getElementById("counseling");
-      tableNames.forEach(name => {
+      tableNames.forEach((name) => {
         const option = document.createElement("option");
         option.value = name;
         option.textContent = name;
@@ -113,7 +142,9 @@
 
       // Helper: get unique values for a column from selected table
       function getUniqueValues(column, tableName) {
-        const stmt = db.prepare(`SELECT DISTINCT "${column}" FROM "${tableName}" WHERE "${column}" IS NOT NULL AND "${column}" != '' ORDER BY "${column}" COLLATE NOCASE ASC`);
+        const stmt = db.prepare(
+          `SELECT DISTINCT "${column}" FROM "${tableName}" WHERE "${column}" IS NOT NULL AND "${column}" != '' ORDER BY "${column}" COLLATE NOCASE ASC`
+        );
         const values = [];
         while (stmt.step()) values.push(stmt.get()[0]);
         stmt.free();
@@ -124,7 +155,7 @@
       function fillSelect(id, values) {
         const select = document.getElementById(id);
         select.innerHTML = '<option value="">All</option>';
-        values.forEach(v => {
+        values.forEach((v) => {
           const option = document.createElement("option");
           option.value = v;
           option.textContent = v;
@@ -137,14 +168,21 @@
         const selectedTable = counselingSelect.value;
         if (!selectedTable) return;
 
-        ["institute", "program", "quota", "category", "round", "seatGender"].forEach(col => {
+        [
+          "institute",
+          "program",
+          "quota",
+          "category",
+          "round",
+          "seatGender",
+        ].forEach((col) => {
           const colNameMap = {
             institute: "Institute",
             program: "Program",
             quota: "Quota",
             category: "Category",
             round: "Round",
-            seatGender: "Seat Gender"
+            seatGender: "Seat Gender",
           };
           fillSelect(col, getUniqueValues(colNameMap[col], selectedTable));
         });
@@ -162,11 +200,11 @@
       }
 
       // Handle form submit
-      document.getElementById("filterForm").onsubmit = function(event) {
+      document.getElementById("filterForm").onsubmit = function (event) {
         event.preventDefault();
 
         const rank = Number(document.getElementById("rank").value);
-        if (!rank) {
+        if (!rank || rank <= 0) {
           alert("Please enter a valid rank.");
           return;
         }
@@ -183,7 +221,7 @@
           quota: document.getElementById("quota").value,
           category: document.getElementById("category").value,
           round: document.getElementById("round").value,
-          seatGender: document.getElementById("seatGender").value
+          seatGender: document.getElementById("seatGender").value,
         };
 
         let query = `SELECT * FROM "${selectedTable}" WHERE ? BETWEEN "Opening Rank" AND "Closing Rank"`;
@@ -197,7 +235,7 @@
               quota: "Quota",
               category: "Category",
               round: "Round",
-              seatGender: "Seat Gender"
+              seatGender: "Seat Gender",
             }[key];
 
             if (["institute", "program"].includes(key)) {
@@ -220,12 +258,14 @@
           return;
         }
 
-        const columns = result[0].columns.filter(c => c !== "Sr.No" && c !== "Remark");
+        const columns = result[0].columns.filter(
+          (c) => c !== "Sr.No" && c !== "Remark"
+        );
         const values = result[0].values;
 
-        let tableHtml = `<table class="min-w-full border border-gray-300 border-collapse text-sm">
+        let tableHtml = `<table class="min-w-full border border-gray-300 border-collapse text-sm sm:text-base">
           <thead class="bg-gray-200"><tr><th class="border border-gray-300 px-2 py-1 text-left">#</th>`;
-        columns.forEach(col => {
+        columns.forEach((col) => {
           tableHtml += `<th class="border border-gray-300 px-2 py-1 text-left">${col}</th>`;
         });
         tableHtml += "</tr></thead><tbody>";
