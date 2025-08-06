@@ -275,7 +275,9 @@
           seatGender: document.getElementById("seatGender").value,
         };
 
-        let query = `SELECT * FROM "${selectedTable}" WHERE ? BETWEEN "Opening Rank" AND "Closing Rank"`;
+
+        // thanks to Tushar ;)
+        let query = `SELECT * FROM "${selectedTable}" WHERE CAST("Closing Rank" AS INTEGER) >= ?`;
         const params = [rank];
 
         for (const [key, value] of Object.entries(filters)) {
